@@ -11,22 +11,8 @@ use app\Sign\Scissors;
 use app\Sign\Spock;
 use app\Sign\Lizard;
 
-/**
- * Defines application features from the specific context.
- */
-class FeatureContext implements Context, SnippetAcceptingContext
+class SignContext extends BasicContext
 {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
-    public function __construct()
-    {
-    }
-
     /**
      * @Given there is new Rock sign
      */
