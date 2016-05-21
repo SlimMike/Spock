@@ -4,3 +4,4 @@ default:
             contexts:
                 - BasicContext
                 - SignContext
+                - SignCompareContext
