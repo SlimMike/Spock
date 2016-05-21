@@ -42,6 +42,30 @@ class SignCompareContext extends BasicContext
     }
 
     /**
+     * @Given second sign is Paper
+     */
+    public function secondSignIsPaper()
+    {
+        $this->secondSign = new Paper();
+    }
+
+    /**
+     * @Given second sign is Scissors
+     */
+    public function secondSignIsScissors()
+    {
+        $this->secondSign = new Scissors();
+    }
+
+    /**
+     * @Given second sign is Spock
+     */
+    public function secondSignIsSpock()
+    {
+        $this->secondSign = new Spock();
+    }
+
+    /**
      * @Given second sign is Lizard
      */
     public function secondSignIsLizard()

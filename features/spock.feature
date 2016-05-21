@@ -11,3 +11,18 @@ Feature: Compare Spock sign
     Given first sign is Spock
     Given second sign is Rock
     Then first sign wins with second sign
+
+  Scenario: Comparing Spock to Paper
+    Given first sign is Spock
+    Given second sign is Paper
+    Then first sign does not win with second sign
+
+  Scenario: Comparing Spock to Scissors
+    Given first sign is Spock
+    Given second sign is Scissors
+    Then first sign wins with second sign
+
+  Scenario: Comparing Spock to Spock
+    Given first sign is Spock
+    Given second sign is Spock
+    Then first sign does not win with second sign
