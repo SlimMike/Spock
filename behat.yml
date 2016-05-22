@@ -2,14 +2,22 @@ default:
     suites:
         sign:
             contexts:
-                - BasicContext
                 - SignContext
                 - SignCompareContext
             paths:
                 - %paths.base%/features/sign
         turn:
             contexts:
-                - BasicContext
                 - TurnContext
             paths:
                 - %paths.base%/features/turn
+        game:
+            contexts:
+                - GameContext
+            paths:
+                - %paths.base%/features/game
+        player:
+            contexts:
+                - PlayerContext
+            paths:
+                - %paths.base%/features/player
