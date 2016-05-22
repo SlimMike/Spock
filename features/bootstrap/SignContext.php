@@ -1,15 +1,10 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Behat\Context\Context;
-use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use app\Sign\Rock;
+use app\Sign\Lizard;
 use app\Sign\Paper;
+use app\Sign\Rock;
 use app\Sign\Scissors;
 use app\Sign\Spock;
-use app\Sign\Lizard;
 
 class SignContext extends BasicContext
 {

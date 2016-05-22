@@ -1,77 +1,9 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Behat\Context\Context;
-use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use app\Sign\Sign;
-use app\Sign\Rock;
-use app\Sign\Paper;
-use app\Sign\Scissors;
-use app\Sign\Spock;
-use app\Sign\Lizard;
-
 
 class SignCompareContext extends BasicContext
 {
-    /**
-     * @var Sign
-     */
-    private $firstSign;
-
-    /**
-     * @var Sign
-     */
-    private $secondSign;
-
-    /**
-     * @Given first sign is Spock
-     */
-    public function firstSignIsSpock()
-    {
-        $this->firstSign = new Spock();
-    }
-
-    /**
-     * @Given second sign is Rock
-     */
-    public function secondSignIsRock()
-    {
-        $this->secondSign = new Rock();
-    }
-
-    /**
-     * @Given second sign is Paper
-     */
-    public function secondSignIsPaper()
-    {
-        $this->secondSign = new Paper();
-    }
-
-    /**
-     * @Given second sign is Scissors
-     */
-    public function secondSignIsScissors()
-    {
-        $this->secondSign = new Scissors();
-    }
-
-    /**
-     * @Given second sign is Spock
-     */
-    public function secondSignIsSpock()
-    {
-        $this->secondSign = new Spock();
-    }
-
-    /**
-     * @Given second sign is Lizard
-     */
-    public function secondSignIsLizard()
-    {
-        $this->secondSign = new Lizard();
-    }
+    use ManipulatesFirstAndSecondSign;
 
     /**
      * @Then first sign does not win with second sign

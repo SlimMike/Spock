@@ -1,8 +1,15 @@
 default:
     suites:
-        default:
+        sign:
             contexts:
                 - BasicContext
                 - SignContext
                 - SignCompareContext
+            paths:
+                - %paths.base%/features/sign
+        turn:
+            contexts:
+                - BasicContext
                 - TurnContext
+            paths:
+                - %paths.base%/features/turn

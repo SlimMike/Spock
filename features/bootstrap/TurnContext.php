@@ -1,19 +1,13 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Behat\Context\Context;
-use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use app\Sign\Rock;
-use app\Sign\Paper;
-use app\Sign\Scissors;
-use app\Sign\Spock;
 use app\Sign\Lizard;
+use app\Sign\Spock;
 use app\Turn;
 
 class TurnContext extends BasicContext
 {
+    use ManipulatesFirstAndSecondSign;
+
     /**
      * @var Turn
      */
@@ -24,7 +18,7 @@ class TurnContext extends BasicContext
      */
     public function weCanCreateATurnWithFirstAndSecondSign()
     {
-        $this->turn = new Turn();
+        $this->turn = new Turn($this->firstSign, $this->secondSign);
     }
 
     /**
@@ -32,7 +26,10 @@ class TurnContext extends BasicContext
      */
     public function turnsFirstSignIsSpock()
     {
-        throw new PendingException();
+        PHPUnit_Framework_Assert::assertEquals(
+            true,
+            $this->turn->getFirst() instanceof Spock
+        );
     }
 
     /**
@@ -40,6 +37,9 @@ class TurnContext extends BasicContext
      */
     public function turnsSecondSignIsLizard()
     {
-        throw new PendingException();
+        PHPUnit_Framework_Assert::assertEquals(
+            true,
+            $this->turn->getSecond() instanceof Lizard
+        );
     }
 }
