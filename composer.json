@@ -1,5 +1,5 @@
 {
-    "name": "mwe/spock",
+    "name": "slimmike/spock",
     "require": {},
     "require-dev": {
         "behat/behat": "^3.1",
