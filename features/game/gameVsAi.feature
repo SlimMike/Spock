@@ -6,3 +6,8 @@ Feature: There is a Game vs AI
     Given human first player
     Given ai second player
     Then We can create a game with first and second player
+
+  Scenario: Adding a turn to Game
+    Given game with human and ai player
+    Given new turn
+    Then we can add new turn to the game

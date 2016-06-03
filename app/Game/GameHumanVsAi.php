@@ -3,6 +3,7 @@
 namespace app\Game;
 
 use app\Player\Player;
+use app\Turn;
 
 class GameHumanVsAi implements Game
 {
@@ -17,6 +18,11 @@ class GameHumanVsAi implements Game
     private $secondPlayer;
 
     /**
+     * @var Turn[]
+     */
+    private $turns;
+
+    /**
      * @param Player $firstPlayer
      * @param Player $secondPlayer
      */
@@ -24,5 +30,10 @@ class GameHumanVsAi implements Game
     {
         $this->firstPlayer  = $firstPlayer;
         $this->secondPlayer = $secondPlayer;
+    }
+
+    public function addTurn(Turn $turn)
+    {
+        $this->turns[] = $turn;
     }
 }
