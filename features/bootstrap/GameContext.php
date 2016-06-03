@@ -1,6 +1,6 @@
 <?php
 
-use app\Game\Game;
+use app\Game\GameHumanVsAi;
 use app\Player\AiPlayer;
 use app\Player\HumanPlayer;
 use app\Player\Player;
@@ -18,7 +18,7 @@ class GameContext extends BasicContext
     private $secondPlayer;
 
     /**
-     * @var Game
+     * @var GameHumanVsAi
      */
     private $game;
 
@@ -43,6 +43,6 @@ class GameContext extends BasicContext
      */
     public function weCanCreateAGameWithFirstAndSecondPlayer()
     {
-        $this->game = new Game($this->firstPlayer, $this->secondPlayer);
+        $this->game = new GameHumanVsAi($this->firstPlayer, $this->secondPlayer);
     }
 }
