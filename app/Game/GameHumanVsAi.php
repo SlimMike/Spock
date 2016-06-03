@@ -3,25 +3,9 @@
 namespace app\Game;
 
 use app\Player\Player;
-use app\Turn;
 
-class GameHumanVsAi implements Game
+class GameHumanVsAi extends Game
 {
-    /**
-     * @var Player
-     */
-    private $firstPlayer;
-
-    /**
-     * @var Player
-     */
-    private $secondPlayer;
-
-    /**
-     * @var Turn[]
-     */
-    private $turns;
-
     /**
      * @param Player $firstPlayer
      * @param Player $secondPlayer
@@ -30,10 +14,14 @@ class GameHumanVsAi implements Game
     {
         $this->firstPlayer  = $firstPlayer;
         $this->secondPlayer = $secondPlayer;
+        $this->turns        = [];
     }
 
-    public function addTurn(Turn $turn)
+    /**
+     * @return boolean
+     */
+    public function isFinished()
     {
-        $this->turns[] = $turn;
+        return 3 === $this->getCountOfTurnsWonByFirstPlayer();
     }
 }
