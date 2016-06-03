@@ -1,7 +1,9 @@
 <?php
 
-use app\Player;
-use app\Game;
+use app\Game\Game;
+use app\Player\AiPlayer;
+use app\Player\HumanPlayer;
+use app\Player\Player;
 
 class GameContext extends BasicContext
 {
@@ -21,19 +23,19 @@ class GameContext extends BasicContext
     private $game;
 
     /**
-     * @Given first player
+     * @Given human first player
      */
-    public function firstPlayer()
+    public function humanFirstPlayer()
     {
-        $this->firstPlayer = new Player();
+        $this->firstPlayer = new HumanPlayer();
     }
 
     /**
-     * @Given second player
+     * @Given ai second player
      */
-    public function secondPlayer()
+    public function aiSecondPlayer()
     {
-        $this->secondPlayer = new Player();
+        $this->secondPlayer = new AiPlayer();
     }
 
     /**

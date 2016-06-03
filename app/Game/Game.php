@@ -1,7 +1,8 @@
 <?php
 
-namespace app;
+namespace app\Game;
 
+use app\Player\Player;
 
 class Game
 {
@@ -24,5 +25,4 @@ class Game
         $this->firstPlayer  = $firstPlayer;
         $this->secondPlayer = $secondPlayer;
     }
-
 }
