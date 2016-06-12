@@ -22,6 +22,6 @@ class GameHumanVsAi extends Game
      */
     public function isFinished()
     {
-        return 3 === $this->getCountOfTurnsWonByFirstPlayer();
+        return 3 === $this->getCountOfTurnsWonBySecondPlayer();
     }
 }

@@ -14,9 +14,9 @@ Feature: There is a Game vs AI
 
   Scenario: Adding a turn to finished Game
     Given game with human and ai player
-    And adding turn won by player
-    And adding turn won by player
-    And adding turn won by player
+    And adding a turn lost by player
+    And adding a turn lost by player
+    And adding a turn lost by player
     Then game is finished
     Then we cannot add new turn
 
@@ -41,18 +41,18 @@ Feature: There is a Game vs AI
     Given game with human and ai player
     Then game is not finished
 
-  Scenario: Finishing game when there are three rounds won by player
+  Scenario: Finishing game when there are three rounds won by ai
     Given game with human and ai player
-    And adding turn won by player
-    And adding turn won by player
-    And adding turn won by player
+    And adding a turn lost by player
+    And adding a turn lost by player
+    And adding a turn lost by player
     Then game is finished
 
-  Scenario: Not finishing game when there are three rounds won by ai
+  Scenario: Not finishing game when there are three rounds won by player
     Given game with human and ai player
-    And adding a turn lost by player
-    And adding a turn lost by player
-    And adding a turn lost by player
+    And adding turn won by player
+    And adding turn won by player
+    And adding turn won by player
     Then game is not finished
 
   Scenario: New game has zero score for player

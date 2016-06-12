@@ -52,12 +52,32 @@ abstract class Game
     }
 
     /**
+     * @return int
+     */
+    public function getCountOfTurnsWonBySecondPlayer()
+    {
+        $turnsWon = $this->getTurnsWonBySecondPlayer();
+
+        return count($turnsWon);
+    }
+
+    /**
      * @return Turn[]
      */
     protected function getTurnsWonByFirstPlayer()
     {
         return array_filter($this->turns, function(Turn $turn) {
             return $turn->isFirstSignOwningSecond();
+        });
+    }
+
+    /**
+     * @return Turn[]
+     */
+    protected function getTurnsWonBySecondPlayer()
+    {
+        return array_filter($this->turns, function(Turn $turn) {
+            return $turn->isSecondSignOwningFirst();
         });
     }
 
