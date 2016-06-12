@@ -54,3 +54,31 @@ Feature: There is a Game vs AI
     And adding a turn lost by player
     And adding a turn lost by player
     Then game is not finished
+
+  Scenario: New game has zero score for player
+    Given game with human and ai player
+    Then score for player is equal to "0"
+
+  Scenario: Draw round doesn't add to player score
+    Given game with human and ai player
+    And adding a draw turn
+    Then score for player is equal to "0"
+
+  Scenario: Lost round doesn't add to player score
+    Given game with human and ai player
+    And adding a turn lost by player
+    Then score for player is equal to "0"
+
+  Scenario: Round won by player adds two to player score
+    Given game with human and ai player
+    And adding turn won by player
+    Then score for player is equal to "2"
+
+  Scenario: Player won two rounds, then lost three
+    Given game with human and ai player
+    And adding turn won by player
+    And adding turn won by player
+    And adding a turn lost by player
+    And adding a turn lost by player
+    And adding a turn lost by player
+    Then score for player is equal to "4"

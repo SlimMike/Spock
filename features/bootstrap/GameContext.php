@@ -160,6 +160,17 @@ class GameContext extends BasicContext
     }
 
     /**
+     * @Then score for player is equal to :expectedScore
+     */
+    public function scoreForPlayerIsEqualTo($expectedScore)
+    {
+        PHPUnit_Framework_Assert::assertEquals(
+            (int) $expectedScore,
+            $this->game->getScoreForFirstPlayer()
+        );
+    }
+
+    /**
      * @return Turn
      */
     private function getTurnWonByFirstPlayer()

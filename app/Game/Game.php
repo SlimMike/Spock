@@ -60,4 +60,12 @@ abstract class Game
             return $turn->isFirstSignOwningSecond();
         });
     }
+
+    /**
+     * @return int
+     */
+    public function getScoreForFirstPlayer()
+    {
+        return 2 * $this->getCountOfTurnsWonByFirstPlayer();
+    }
 }
