@@ -171,6 +171,17 @@ class GameContext extends BasicContext
     }
 
     /**
+     * @Then longest streak for player is equal to :expectedLongestStreak
+     */
+    public function longestStreakForPlayerIsEqualTo($expectedLongestStreak)
+    {
+        PHPUnit_Framework_Assert::assertEquals(
+            (int) $expectedLongestStreak,
+            $this->game->getLongestStreakForFirstPlayer()
+        );
+    }
+
+    /**
      * @return Turn
      */
     private function getTurnWonByFirstPlayer()

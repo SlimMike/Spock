@@ -82,3 +82,41 @@ Feature: There is a Game vs AI
     And adding a turn lost by player
     And adding a turn lost by player
     Then score for player is equal to "4"
+
+  Scenario: Longest streak for player in a new game is zero
+    Given game with human and ai player
+    Then longest streak for player is equal to "0"
+
+  Scenario: Longest streak for player in a game with one turn won is 1
+    Given game with human and ai player
+    And adding turn won by player
+    Then longest streak for player is equal to "1"
+
+  Scenario: Longest streak for player in a game with one turn won and one draw is 2
+    Given game with human and ai player
+    And adding turn won by player
+    And adding a draw turn
+    Then longest streak for player is equal to "2"
+
+  Scenario: Winning few rounds after losing two
+    Given game with human and ai player
+    And adding a turn lost by player
+    And adding a turn lost by player
+    And adding turn won by player
+    And adding turn won by player
+    And adding turn won by player
+    And adding turn won by player
+    Then longest streak for player is equal to "4"
+
+  Scenario: Game with max streak of 4 for player
+    Given game with human and ai player
+    And adding turn won by player
+    And adding turn won by player
+    And adding turn won by player
+    And adding a draw turn
+    And adding a turn lost by player
+    And adding a turn lost by player
+    And adding a draw turn
+    And adding a draw turn
+    And adding a turn lost by player
+    Then longest streak for player is equal to "4"
