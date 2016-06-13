@@ -2,15 +2,20 @@
 
 namespace app\Game;
 
-use app\Player\Player;
+use app\Player\AiPlayer;
+use app\Player\HumanPlayer;
 
+/**
+ * @property HumanPlayer $firstPlayer
+ * @property AiPlayer    $secondPlayer
+ */
 class GameHumanVsAi extends Game
 {
     /**
-     * @param Player $firstPlayer
-     * @param Player $secondPlayer
+     * @param HumanPlayer $firstPlayer
+     * @param AiPlayer    $secondPlayer
      */
-    public function __construct(Player $firstPlayer, Player $secondPlayer)
+    public function __construct(HumanPlayer $firstPlayer, AiPlayer $secondPlayer)
     {
         $this->firstPlayer  = $firstPlayer;
         $this->secondPlayer = $secondPlayer;
